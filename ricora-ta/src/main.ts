@@ -1,8 +1,10 @@
 import "./style.css";
+import bubble from "./components/bubble";
+import audio_dialog from "./components/audio_dialog";
 
-const app = document.querySelector<HTMLDivElement>("#app")!;
+const main = () => {
+  const bubbleCtrl = bubble.create("#accept_button");
+  audio_dialog.init();
+};
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+window.onload = main;

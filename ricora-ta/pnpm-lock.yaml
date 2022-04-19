@@ -2,6 +2,8 @@ lockfileVersion: 5.3
 
 specifiers:
   '@svgdotjs/svg.js': ^3.1.2
+  '@types/animejs': ^3.1.4
+  animejs: ^3.2.1
   autoprefixer: ^10.4.4
   postcss: ^8.4.12
   tailwindcss: ^3.0.23
@@ -10,6 +12,8 @@ specifiers:
 
 devDependencies:
   '@svgdotjs/svg.js': 3.1.2
+  '@types/animejs': 3.1.4
+  animejs: 3.2.1
   autoprefixer: 10.4.4_postcss@8.4.12
   postcss: 8.4.12
   tailwindcss: 3.0.23_autoprefixer@10.4.4
@@ -64,6 +68,10 @@ packages:
     resolution: {integrity: sha512-0ZCWTiuRjCXT2SUoVDiu+8DLuRQlkxZbO680Y2QkV7jNsULzJajrx6A3MxA/IBQg6UGV5csgPZ8w7U57hZSK+A==}
     dev: true
 
+  /@types/animejs/3.1.4:
+    resolution: {integrity: sha512-WUjeFT2SXd6intfE6cg6eL1jk/JL88JqM2gC4WqO4iHLmbCvHUq6aoLK13lGpDWs4FtS2PHoYraJZ0dEx99Dyg==}
+    dev: true
+
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
@@ -85,6 +93,10 @@ packages:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
+
+  /animejs/3.2.1:
+    resolution: {integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==}
     dev: true
 
   /ansi-styles/3.2.1:

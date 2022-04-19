@@ -4,37 +4,354 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap"
+      rel="stylesheet"
+    />
     <title>た | RICORA MUSIC TEAM</title>
+
+    <style>
+      .track {
+        @apply flex flex-col overflow-hidden;
+      }
+      .track:not(:nth-child(2)) {
+        @apply mt-4;
+      }
+      .track:not(:nth-child(2))::before {
+        content: "たたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたたた";
+        @apply whitespace-nowrap text-[10px] scale-[0.5] md:scale-[0.8] origin-left mb-4;
+      }
+      .track > div {
+        @apply flex items-end flex-wrap md:flex-nowrap;
+      }
+      .track > div > div:nth-child(1) {
+        @apply flex flex-col md:flex-1 w-full md:w-auto;
+      }
+      .track > div > div:nth-child(1) > div:nth-child(1) {
+        @apply text-xl md:text-3xl mb-2 flex flex-col;
+      }
+      .track
+        > div
+        > div:nth-child(1)
+        > div:nth-child(1)
+        > span:nth-of-type(1)
+        > span {
+        @apply text-red-500;
+      }
+      .track > div > div:nth-child(1) > div:nth-child(1) > span:nth-of-type(2) {
+        @apply md:ml-1 text-lg md:text-xl font-ipa;
+      }
+      .track
+        > div
+        > div:nth-child(1)
+        > div:nth-child(1)
+        > span:nth-of-type(2)
+        > span {
+        @apply text-red-500 font-bold;
+      }
+      .track > div > div:nth-child(1) > div:nth-child(2) {
+        @apply text-sm md:text-xl;
+      }
+      .track > div > div:nth-child(2) {
+        @apply flex mt-2 md:mt-0;
+      }
+      .track > div > div:nth-child(2) > a {
+        @apply w-[20px] h-[20px] md:w-[40px] md:h-[40px] flex justify-center items-center cursor-pointer;
+      }
+      .track > div > div:nth-child(2) > a:not(:first-child) {
+        @apply ml-6;
+      }
+      .track > div > div:nth-child(2) > a > img {
+        @apply w-full;
+      }
+    </style>
   </head>
-  <body bgcolor="#ffffee">
-    <div id="bubble" class="fixed top-0 left-0 w-full h-full z-0"></div>
-    <main class="relative flex flex-col w-full">
-      <section
-        id="title"
-        class="flex w-full h-screen justify-center items-center"
-      >
-        <div id="title_logo" class="w-40 h-60"></div>
-      </section>
-      <section
-        id="concept"
-        class="flex w-full h-screen justify-center items-center"
-      >
-        <div id="concept_box" class="container p-8 m-6">
-          あああああ<br />ああああ<br />あああ<br />あああああ<br />ああ
-        </div>
-      </section>
-    </main>
+  <body
+    class="bg-[url('./resources/ta_HD_back.png')] bg-no-repeat bg-fixed font-sans"
+  >
     <div
+      class="fixed left-full top-1/2 md:left-[calc(50%+100px)] md:top-[10vh]"
+    >
+      <div class="rotate-[-30deg] md:rotate-0">
+        <div
+          class="absolute left-[-150px] md:left-0 top-[-300px] md:top-0 w-[400px] md:w-screen h-screen"
+          id="title_girl"
+        >
+          <img
+            src="./resources/girl.png"
+            alt="Ta girl"
+            class="w-full md:w-auto md:h-full"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="fixed left-0 top-2/3 hidden lg:block">
+      <div class="rotate-[30deg]">
+        <div
+          class="absolute left-[-50px] top-[-150px] w-[300px] translate-y-[500px]"
+          id="middle_girl"
+        >
+          <img src="./resources/girl.png" alt="Ta girl" class="w-full" />
+        </div>
+      </div>
+      <div class="absolute w-1 h-1 bg-red-500 top-0 left-0"></div>
+    </div>
+    <div class="flex justify-center w-full">
+      <main class="relative flex flex-col container px-4 lg:px-40">
+        <section id="title" class="flex h-screen justify-center items-center">
+          <div id="title_logo bt_b_0" class="w-[200px] md:w-[250px]">
+            <img
+              src="./resources/ta_logo.png"
+              alt="title logo"
+              class="w-full"
+            />
+          </div>
+        </section>
+        <section id="concept" class="mb-44">
+          <div id="bt_b_1" class="p-8 bg-white">
+            <div class="text-5xl mb-8">Concept</div>
+            <div class="text-xl">
+              <span class="text-orange-500">RICORA MUSIC TEAM</span
+              >が送る新作コンピレーションアルバム！<br />
+              誰が言い出したか曲のタイトルは必ず<span
+                class="text-red-500 font-bold"
+                >「た」<span class="font-ipa mr-2">[ta]</span></span
+              >(<span class="font-ipa">[tæ]</span
+              >もセーフ)から始まらないといけない縛りを設けて制作しました。<br />
+              <span class="text-red-500 font-bold">耽</span>美なる<span
+                class="text-red-500 font-bold"
+                >「た」</span
+              >の、<span class="text-red-500 font-bold">旅</span>にも似た<span
+                class="text-red-500 font-bold"
+                >タ</span
+              >イトルマッチを<span class="text-red-500 font-bold">堪</span
+              >能ください。(？)
+            </div>
+          </div>
+        </section>
+        <section id="tracklist" class="mb-44">
+          <div class="flex flex-col p-8 bg-white">
+            <div class="text-5xl mb-8">TrackList</div>
+            <div class="track">
+              <div>
+                <div>
+                  <div>
+                    <span>1. <span>タ</span>ラレバ♡恋模様</span>
+                    <span>[<span>ta</span>rarebakoimojoɯ]</span>
+                  </div>
+                  <div>MoAI&tsuki feat. 小春六花&京町セイカ</div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div class="track">
+              <div>
+                <div>
+                  <div>
+                    <span>2. <span>太</span>陽系三丁目</span>
+                    <span>[<span>ta</span>ijoɯkeisaɲtʃoɯme]</span>
+                  </div>
+                  <div>バチコシ854</div>
+                </div>
+                <div>
+                  <a
+                    href="https://twitter.com/Bachikoshi854?t=0mRzVjH65lvDcPqk9mrMnA&s=09"
+                    ><img src="./resources/sns/twiiter.svg" alt="twitter icon"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="track">
+              <div>
+                <div>
+                  <div>
+                    <span>3. <span>タ</span>ルトに乗って</span>
+                    <span>[<span>ta</span>rɯtoɲinot̚te]</span>
+                  </div>
+                  <div>ODAMAKI</div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div class="track">
+              <div>
+                <div>
+                  <div>
+                    <span>4. <span>Ta</span>lent Show</span>
+                    <span>[ˈ<span>tæ</span>lənt ˈʃoʊ]</span>
+                  </div>
+                  <div>YurA</div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div class="track">
+              <div>
+                <div>
+                  <div>
+                    <span>5. <span>誰</span>そ見しか楽園</span>
+                    <span>[<span>ta</span>somʲiʃikarakɯeɴ]</span>
+                  </div>
+                  <div>まいはね</div>
+                </div>
+                <div>
+                  <a
+                    href="https://twitter.com/mu_yasoba8149?t=WZLag-ek2EeDyz8AYNisPA&s=09"
+                    ><img src="./resources/sns/twiiter.svg" alt="twitter icon"
+                  /></a>
+                  <a href="https://youtube.com/channel/UCel4rls8qR_3HAlGL2h6-Jw"
+                    ><img src="./resources/sns/youtube.svg" alt="youtube icon"
+                  /></a>
+                  <a
+                    href="https://soundcloud.com/nyy3pghrcsaz?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                    ><img
+                      src="./resources/sns/soundcloud.png"
+                      alt="soundcloud icon"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="track">
+              <div>
+                <div>
+                  <div>
+                    <span>6. <span>謀</span>ったな大賞</span>
+                    <span>[<span>ta</span>bakat̚tanataiʃoɯ]</span>
+                  </div>
+                  <div>MoAI</div>
+                </div>
+                <div>
+                  <a
+                    href="https://twitter.com/MoAI8888?t=ZDNF1EfQ-xziEN233tkLIw&s=09"
+                    ><img src="./resources/sns/twiiter.svg" alt="twitter icon"
+                  /></a>
+                  <a href="https://nico.ms/user/96094844?ref=sp_other"
+                    ><img
+                      src="./resources/sns/niconico.png"
+                      alt="soundcloud icon"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="track">
+              <div>
+                <div>
+                  <div>
+                    <span>7. <span>Ta</span>vor</span>
+                    <span>[<span>ta</span>vouʁ]</span>
+                  </div>
+                  <div>tsuki</div>
+                </div>
+                <div>
+                  <a
+                    href="https://twitter.com/tsukisann_24?t=MbNGld4Fw6sczwWl79-14A&s=09"
+                    ><img src="./resources/sns/twiiter.svg" alt="twitter icon"
+                  /></a>
+                  <a href="https://soundcloud.com/fuiedrxdraxi"
+                    ><img
+                      src="./resources/sns/soundcloud.png"
+                      alt="soundcloud icon"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="cdinfo" class="mb-44">
+          <div
+            id="bt_b_3"
+            class="flex flex-wrap items-center xl:flex-nowrap bg-white p-8"
+          >
+            <div class="w-full">
+              <img
+                src="./resources/jacket.png"
+                alt="CD Jacket"
+                class="w-full"
+              />
+            </div>
+            <div class="w-full mt-8 xl:mt-0 xl:ml-8 text-xl">
+              <div class="text-center">RICORA MUSIC TEAM</div>
+              <div class="text-6xl text-center">た</div>
+              <div class="mt-6">Mastering Engineer: YurA</div>
+              <div class="mt-2">Jacket Design: Yughao</div>
+              <div class="mt-2">Web Design & Development: MoAI</div>
+              <div class="mt-4 text-2xl">Price: 500yen</div>
+              <div class="mt-2 text-2xl">
+                <span class="text-orange-500"
+                  >M32022春 第二展示場2階 ク23-b</span
+                >
+                にて頒布！
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="xfd_yt" class="mb-44">
+          <div
+            id="bt_b_4"
+            class="container p-8 flex flex-col items-center bg-white"
+          >
+            <div class="w-full text-3xl mb-4">Crossfade</div>
+            <div class="aspect-video w-full">
+              <iframe
+                class="w-full h-full"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/oVUjArVXqxY"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer
+      id="links"
+      class="relative w-full flex justify-center bg-orange-100"
+    >
+      <div class="flex flex-col p-8 max-w-md">
+        <div class="w-full flex justify-between mb-4 font-ipa">
+          <a
+            href="https://www.youtube.com/channel/UCqke0S_egzSFtf5Yu1_YN4A"
+            class="text-xl text-black hover:text-orange-500 duration-150"
+            >Youtube</a
+          ><a
+            href="https://soundcloud.com/ricora-music-team-1"
+            class="text-xl text-black hover:text-orange-500 duration-150"
+            >SoundCloud</a
+          ><a
+            href="https://twitter.com/ricora_dtm_dj"
+            class="text-xl text-black hover:text-orange-500 duration-150"
+            >Twitter</a
+          >
+        </div>
+        <a href="https://music.tus-ricora.com/" class="self-center w-full"
+          ><img
+            src="./resources/circle-logo.png"
+            alt="Circle Homepage"
+            class="w-full"
+        /></a>
+      </div>
+    </footer>
+    <!-- <div
       id="audio_dialog"
       class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center"
     >
       <div id="audio_dialog_text" class="text-center text-lg mb-3 duration-150">
         このサイトは音が流れます。<br />了解しまし…
       </div>
-      <button id="accept_button" class="w-40 h-16 border-2 bg-white box-border">
+      <button
+        id="accept_button bt_a_0"
+        class="w-40 h-16 border-2 bg-white box-border"
+      >
         た
       </button>
-    </div>
+    </div> -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

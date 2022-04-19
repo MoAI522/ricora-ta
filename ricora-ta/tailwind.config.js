@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./index.html"],
   theme: {
@@ -13,6 +15,15 @@ module.exports = {
       yellow: {
         300: "#ffe1a6",
         500: "#ffe1a6",
+      },
+      red: {
+        500: "#ff4433",
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ["RocknRoll One", ...defaultTheme.fontFamily.sans],
+        ipa: [...defaultTheme.fontFamily.sans],
       },
     },
   },

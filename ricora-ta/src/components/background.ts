@@ -10,6 +10,7 @@ import ta7 from "../assets/svg/4.svg?raw";
 
 const WHITE = "#fff";
 const ORANGE_100 = "#fff7f0";
+const ORANGE_200 = "#ffd2ba";
 const ORANGE_300 = "#ffc497";
 const ORANGE_500 = "#dea747";
 const ORANGE_700 = "#b38845";
@@ -27,7 +28,7 @@ const taList = [ta0, ta1, ta2, ta3, ta4, ta5, ta6, ta7];
 
 type TState = {
   bgGroup: SVG.G;
-  tgGroup: SVG.G;
+  // taGroup: SVG.G;
 };
 type TController = {
   getState: () => TState;
@@ -40,37 +41,44 @@ const init = () => {
     h = bgElem.clientHeight;
   const svg = SVG.SVG().addTo(bgElem).size(w, h);
   const bgGroup = svg.group();
-  bgGroup.rect(w, h).fill(ORANGE_100);
+  bgGroup.rect(w, h).fill(ORANGE_200);
 
-  const taSymbol = svg.group();
-  taSymbol.rotate(TA_ROTATE);
+  // const grad = svg
+  //   .gradient("linear", (add) => {
+  //     add.stop(0, YELLOW_300);
+  //     add.stop(0.25, YELLOW_500);
+  //     add.stop(0.6, ORANGE_500);
+  //     add.stop(1, ORANGE_700);
+  //   })
+  //   .from(0, 0)
+  //   .to(0.1, 1);
+  // const taSymbol = svg.symbol();
+  // const taWrapper = taSymbol.group();
+  // taWrapper.rotate(TA_ROTATE);
+  // const taGroup = taWrapper.group();
+  // for (let i = -1; i < window.innerHeight / TA_MARGIN_V; i++) {
+  //   for (let j = -1; j < window.innerWidth / TA_MARGIN_H; j++) {
+  //     const ta = taGroup.group();
+  //     const taSVG = SVG.SVG().svg(ta1);
+  //     ta.add(taSVG);
+  //     ta.move(TA_MARGIN_V * j, TA_MARGIN_H * i);
+  //   }
+  // }
+  // taGroup.animate(5000).dmove(0, -500);
 
-  const colors = [ORANGE_700, ORANGE_500, YELLOW_500, YELLOW_300];
-  for (let i = -1; i < window.innerHeight / TA_MARGIN_V; i++) {
-    for (let j = -1; j < window.innerWidth / TA_MARGIN_H; j++) {
-      const ta = taSymbol.group();
-      ta.svg(ta1).move(TA_MARGIN_V * j, TA_MARGIN_H * i);
-    }
-  }
+  // const taColor = svg.rect(w, h).fill(grad);
 
-  const grad = svg
-    .gradient("linear", (add) => {
-      add.stop(0, YELLOW_300);
-      add.stop(0.25, YELLOW_500);
-      add.stop(0.6, ORANGE_500);
-      add.stop(1, ORANGE_700);
-    })
-    .from(0, 0)
-    .to(0.1, 1);
-  const taColor = svg.rect(w, h).fill(grad);
-
-  const taMask = svg.use(taSymbol).fill("#000");
-  taColor.maskWith(taMask);
-  // const taBorder = svg.use(taSymbol).stroke({ color: WHITE, width: 2 });
+  // const taMask = svg.group();
+  // taMask.use(taSymbol).size(w, h).fill("#fff");
+  // taColor.maskWith(taMask);
+  // const taBorder = svg
+  //   .use(taSymbol)
+  //   .attr("fill", "transparent")
+  //   .stroke({ color: WHITE, width: 2 });
 
   let state: TState = {
     bgGroup,
-    tgGroup: taSymbol,
+    // taGroup,
   };
   const getState = () => state;
   const setState = (_state: TState) => (state = _state);

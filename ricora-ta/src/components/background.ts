@@ -1,4 +1,5 @@
 import * as SVG from "@svgdotjs/svg.js";
+import taWallSrc from "../resources/ta_wall.png";
 
 const WHITE = "#fff";
 const ORANGE_300 = "#ffc497";
@@ -26,7 +27,7 @@ const load = () =>
     taImg.onload = () => {
       resolve("");
     };
-    taImg.src = "./resources/ta_wall.png";
+    taImg.src = taWallSrc;
   });
 
 const init = () => {

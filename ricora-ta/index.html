@@ -77,10 +77,11 @@
     </style>
   </head>
   <body
-    class="bg-[url('./resources/ta_HD_back.png')] bg-no-repeat bg-fixed font-sans overflow-x-hidden"
+    class="bg-[url('./resources/ta_HD_back.png')] bg-no-repeat bg-fixed bg-cover font-sans overflow-x-hidden"
   >
+    <div id="bg" class="fixed top-0 left-0 w-screen h-screen"></div>
     <div
-      class="fixed left-full top-1/2 md:left-[calc(50%+100px)] md:top-[10vh]"
+      class="fixed left-full top-1/2 md:left-[calc(50%+100px)] md:top-[10vh] hidden"
     >
       <div class="rotate-[-30deg] md:rotate-0">
         <div
@@ -104,11 +105,13 @@
           <img src="./resources/girl.png" alt="Ta girl" class="w-full" />
         </div>
       </div>
-      <div class="absolute w-1 h-1 bg-red-500 top-0 left-0"></div>
     </div>
     <div class="flex justify-center w-full">
       <main class="relative flex flex-col container px-4 lg:px-40">
-        <section id="title" class="flex h-screen justify-center items-center">
+        <section
+          id="title"
+          class="flex h-screen justify-center items-center select-none mb-8"
+        >
           <div id="title_logo bt_b_0" class="w-[200px] md:w-[250px]">
             <img
               src="./resources/ta_logo.png"
@@ -313,7 +316,7 @@
     </div>
     <footer
       id="links"
-      class="relative w-full flex justify-center bg-orange-100"
+      class="relative w-full flex justify-center bg-orange-300"
     >
       <div class="flex flex-col p-8 max-w-md">
         <div class="w-full flex justify-between mb-4 font-ipa">

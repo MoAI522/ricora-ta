@@ -76,16 +76,14 @@
       }
     </style>
   </head>
-  <body
-    class="bg-[url('./resources/ta_HD_back.png')] bg-no-repeat bg-fixed bg-cover font-sans overflow-x-hidden"
-  >
+  <body class="font-sans overflow-x-hidden bg-orange-200">
     <div id="bg" class="fixed top-0 left-0 w-screen h-screen"></div>
     <div
-      class="fixed left-full top-1/2 md:left-[calc(50%+100px)] md:top-[10vh] hidden"
+      class="fixed left-full top-1/2 md:left-[calc(50%+100px)] md:top-[10vh]"
     >
       <div class="rotate-[-30deg] md:rotate-0">
         <div
-          class="absolute left-[-150px] md:left-0 top-[-300px] md:top-0 w-[400px] md:w-screen h-screen"
+          class="absolute left-[-150px] md:left-0 top-[-300px] md:top-0 w-[400px] md:w-screen h-[110vh] translate-y-[1000px]"
           id="title_girl"
         >
           <img
@@ -99,7 +97,7 @@
     <div class="fixed left-0 top-2/3 hidden lg:block">
       <div class="rotate-[30deg]">
         <div
-          class="absolute left-[-50px] top-[-150px] w-[300px] translate-y-[500px]"
+          class="absolute left-[-50px] top-[-150px] w-[350px] translate-y-[500px]"
           id="middle_girl"
         >
           <img src="./resources/girl.png" alt="Ta girl" class="w-full" />
@@ -112,7 +110,7 @@
           id="title"
           class="flex h-screen justify-center items-center select-none mb-8"
         >
-          <div id="title_logo bt_b_0" class="w-[200px] md:w-[250px]">
+          <div id="title_logo" class="w-[200px] md:w-[250px]">
             <img
               src="./resources/ta_logo.png"
               alt="title logo"
@@ -298,17 +296,45 @@
         <section id="xfd_yt" class="mb-60">
           <div class="container p-8 flex flex-col items-center bubble">
             <div class="w-full text-3xl mb-4">Crossfade</div>
-            <div class="aspect-video w-full">
+            <div class="w-full">
               <iframe
-                class="w-full h-full"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/oVUjArVXqxY"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                width="100%"
+                height="300"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1252157851&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
               ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
+              >
+                <a
+                  href="https://soundcloud.com/ricora-music-team-1"
+                  title="RICORA MUSIC TEAM(仮)"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >RICORA MUSIC TEAM(仮)</a
+                >
+                ·
+                <a
+                  href="https://soundcloud.com/ricora-music-team-1/m3-2022crossfade"
+                  title="【春M3 2022】「た」CrossFadeDemo【ク-23b】"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >【春M3 2022】「た」CrossFadeDemo【ク-23b】</a
+                >
+              </div>
             </div>
           </div>
         </section>
@@ -342,6 +368,19 @@
         /></a>
       </div>
     </footer>
+    <div
+      id="screen-top"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        opacity: 1;
+        transition: opacity 500ms;
+      "
+    ></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

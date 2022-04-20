@@ -8,6 +8,7 @@ module.exports = {
       white: "#ffffff",
       orange: {
         100: "#fff7f0",
+        200: "#ffd2ba",
         300: "#ffc497",
         500: "#dea747",
         700: "#b38845",

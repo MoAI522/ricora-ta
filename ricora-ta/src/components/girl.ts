@@ -4,11 +4,10 @@ const ANIMATION_POINT_OFFSET = 100;
 
 type TGirlState = {
   appearance: "exist" | "out";
-  // mouth: "open" | "close";
 };
 type TAnimation = {
   targetState: TGirlState;
-  animType: "bounceIn" | "bounceOut" | "fadeIn";
+  animType: "bounceIn" | "bounceOut";
 };
 type TQueue = Array<TAnimation>;
 type TGirl = {
@@ -45,7 +44,6 @@ const init = () => {
       elem: tGirlElem,
       currentGirlState: {
         appearance: "out",
-        // mouth: "close",
       },
       queue: [],
       animating: null,
@@ -54,7 +52,6 @@ const init = () => {
       elem: mGirlElem,
       currentGirlState: {
         appearance: "out",
-        // mouth: "close",
       },
       queue: [],
       animating: null,
@@ -69,6 +66,8 @@ const init = () => {
     setState,
   };
   window.requestAnimationFrame(() => _update(ctrl));
+
+  return () => _start(ctrl);
 };
 
 const _update = (ctrl: TController) => {
@@ -176,12 +175,12 @@ const _executeAnimation = (state: TState, ctrl: TController) => {
 
     switch (animating.animType) {
       case "bounceIn": {
-        easingFunc = "easeOutBounce";
+        easingFunc = "easeOutBack";
         translateY = [elem.getBoundingClientRect().height, 0];
         break;
       }
       case "bounceOut": {
-        easingFunc = "easeOutBounce";
+        easingFunc = "easeOutQuad";
         translateY = [0, elem.getBoundingClientRect().height];
         break;
       }
@@ -192,15 +191,31 @@ const _executeAnimation = (state: TState, ctrl: TController) => {
     anime({
       targets: elem,
       translateY,
-      duration: 1000,
+      duration: 500,
       easing: easingFunc,
       complete,
     });
 
     _state[target] = { ..._state[target], queue, animating };
   }
-  // console.log(_state.title.animating);
   return _state;
+};
+
+const _start = (ctrl: TController) => {
+  const state = ctrl.getState();
+  const tQueue = state.title.queue;
+  const mQueue = state.middle.queue;
+  tQueue.push({
+    targetState: {
+      appearance: "exist",
+    },
+    animType: "bounceIn",
+  });
+  ctrl.setState({
+    ...state,
+    title: { ...state.title, queue: tQueue },
+    middle: { ...state.middle, queue: mQueue },
+  });
 };
 
 export default {

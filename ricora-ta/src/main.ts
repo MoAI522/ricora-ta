@@ -7,7 +7,7 @@ import anime from "animejs";
 const init = async () => {
   window.setTimeout(
     () => (document.getElementById("screen-top")!.style.opacity = "0"),
-    8000
+    15000
   );
   await background.load();
   const girlAnimStartFunc = girl.init();
